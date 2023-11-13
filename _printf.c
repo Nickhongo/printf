@@ -30,6 +30,11 @@ int _printf(const char *format, ...)
 				len += _print_character('%');
 				i++;
 				break;
+			case 'd':
+			case 'i':
+				len += _print_integer(va_arg(args, int));
+				i++;
+				break;
 			default:
 				_print_character('%');
 				break;
