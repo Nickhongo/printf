@@ -12,9 +12,9 @@ int _print_string(char *str)
 
 	while (str[i] != '\0')
 	{
-		len++;
+		len += _print_character(str[i]);
 		i++;
 	}
 
-	return (write(1, str, len));
+	return (len);
 }
