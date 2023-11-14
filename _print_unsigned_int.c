@@ -30,7 +30,7 @@ int _print_unsigned_int(char *str, unsigned int n)
 		return (0);
 	while (n > 0)
 	{
-		buffer[i] == n % divisor + '0';
+		buffer[i] = n % divisor + '0';
 		n /= divisor;
 		i++;
 	}

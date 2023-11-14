@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 			case 'b':
-				len += _print_unsigned_int("bin", va_args(args, unsigned int));
+				len += _print_unsigned_int("bin", va_arg(args, unsigned int));
 				i++;
 				break;
 			case 'd':
