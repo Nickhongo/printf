@@ -30,6 +30,18 @@ int _printf(const char *format, ...)
 				len += _print_character('%');
 				i++;
 				break;
+			case 'u':
+				len += _print_unsigned_int("dec", va_arg(args, unsigned int));
+				i++;
+				break;
+			case 'o':
+				len += _print_unsigned_int("oct", va_arg(args, unsigned int));
+				i++;
+				break;
+			case 'b':
+				len += _print_unsigned_int("bin", va_args(args, unsigned int));
+				i++;
+				break;
 			default:
 				_print_character('%');
 				break;
