@@ -42,6 +42,14 @@ int _printf(const char *format, ...)
 				len += _print_unsigned_int("bin", va_arg(args, unsigned int));
 				i++;
 				break;
+			case 'x':
+				len += _print_hex("hex", va_arg(args, unsigned int));
+				i++;
+				break;
+			case 'X':
+				len += _print_hex("HEX", va_arg(args, unsigned int));
+				i++;
+				break;
 			case 'd':
 			case 'i':
 				len += _print_integer(va_arg(args, int));
