@@ -50,6 +50,10 @@ int _printf(const char *format, ...)
 				len += _print_hex("HEX", va_arg(args, unsigned int));
 				i++;
 				break;
+			case 'p':
+				len += _print_address(va_arg(args, void *));
+				i++;
+				break;
 			case 'd':
 			case 'i':
 				len += _print_integer(va_arg(args, int));
