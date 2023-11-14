@@ -59,6 +59,14 @@ int _printf(const char *format, ...)
 				len += _print_integer(va_arg(args, int));
 				i++;
 				break;
+			case 'R':
+				len += _print_rot13(va_arg(args, char *));
+				i++;
+				break;
+			case 'r':
+				len += _print_reverse_str(va_arg(args, char *));
+				i++;
+				break;
 			default:
 				_print_character('%');
 				break;

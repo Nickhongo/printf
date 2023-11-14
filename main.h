@@ -14,5 +14,7 @@ int _print_unsigned_int(char *str, unsigned int n);
 int _print_hex(char *str, unsigned int n);
 int _print_address(void *address);
 int _printf(const char *format, ...);
+int _print_reverse_str(char *str);
+int _print_rot13(char *str);
 
 #endif /* MAIN_H */
