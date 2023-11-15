@@ -13,6 +13,8 @@ int _print_unsigned_int(char *str, unsigned int n)
 	int len = 0;
 	char *buffer, temp;
 
+	if (n == 0)
+		return (_print_character('0'));
 	if (str[i] == 'b')
 		divisor = 2;
 	else if (str[i] == 'o')
