@@ -10,6 +10,10 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int len = 0, i = 0;
+	char *str;
+
+	if (format == NULL)
+		return (0);
 
 	va_start(args, format);
 	while (format[i])
@@ -23,7 +27,11 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 			case 's':
-				len += _print_string(va_arg(args, char *));
+				str = va_arg(args, char *);
+				if (str == NULL)
+					len += _print_string("(null)");
+				else
+					len += _print_string(str);
 				i++;
 				break;
 			case '%':
@@ -67,8 +75,10 @@ int _printf(const char *format, ...)
 				len += _print_reverse_str(va_arg(args, char *));
 				i++;
 				break;
+			case '\0':
+				break;
 			default:
-				_print_character('%');
+				len += _print_character('%');
 				break;
 			}
 		}
