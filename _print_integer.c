@@ -11,6 +11,8 @@ int _print_integer(int n)
 	char *buffer, temp;
 	int i = 0, start, end, len = 0, temp_num;
 
+	if (n == 0)
+		return (_print_character('0'));
 	temp_num = (n < 0) ? -n : n;
 	while (temp_num > 0)
 	{
